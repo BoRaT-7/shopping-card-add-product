@@ -17,3 +17,29 @@ const displayProduct = (product,quentity) =>{
     li.innerText = `${product} : ${quentity}`;
     ul.appendChild(li);
 }
+
+const getstorshoppingcard = () =>{
+    let card = {};
+    const storecard = localStorage.getItem('card');
+    if(storecard){
+        card = JSON.parse(storecard);
+    }
+    return card;
+}
+const saveproducttolocalstore = (product,quentity) => {
+       const card =getstorshoppingcard();
+       card[product] = quentity;
+       const cardStringified = JSON.stringify(card);
+       localStorage.setItem('card', cardStringified)
+
+}
+
+const displayProductfromlocalstorg =()=>{
+     const savecard = getstorshoppingcard();
+      console.log(savecard);
+      for(const product in savecard ){
+        const quantity = savecard[product];
+        console.log(product,quantity);
+        displayProduct(product,quantity);
+      }
+}
