@@ -17,3 +17,16 @@ season = 'winter';
   also like movies ${student.movies}`;
 
  console.log(about)
+
+ // 2.arrow function 
+ const getfiftyfive = () => 55;
+ const addsixtyfive = num => num +65;
+ const isEven = x => x %2 ==0;
+ const  addthree = (x,y,z) => x+y+z;
+ const doMath = (num1, num2) => {
+    const sum = num1 +num2;
+    return sum;
+ }
+ const newNumbers = numbers;
+ numbers.push(99);
+ console.log(newNumbers);
